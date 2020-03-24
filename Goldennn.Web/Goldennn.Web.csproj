@@ -187,6 +187,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Goldennn.Database\Goldennn.Database.csproj">
+      <Project>{79204fed-c48e-4211-a072-7c8da64b2423}</Project>
+      <Name>Goldennn.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Goldennn.Entities\Goldennn.Entities.csproj">
+      <Project>{cdd8e0b5-fbf8-4910-9132-57db8454cde5}</Project>
+      <Name>Goldennn.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Goldennn.Services\Goldennn.Services.csproj">
+      <Project>{16a5d66d-a4cc-46e3-8339-2e59b24f91ec}</Project>
+      <Name>Goldennn.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

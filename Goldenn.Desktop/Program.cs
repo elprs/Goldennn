@@ -28,7 +28,6 @@ namespace Goldenn.Desktop
                     Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
                 }
             }
-          
 
             Console.ReadKey();
         }
@@ -46,7 +45,50 @@ namespace Goldenn.Desktop
                 {
                     Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
                 }
+
+
+                //App.PrintMovies();
+                Console.WriteLine("psakse tainia");
+                string choice = Console.ReadLine();
+
+                int id;
+                if (Int32.TryParse(choice, out id))
+                {
+                    App.PrintById(2);
+                }
+                else
+                {
+                    App.PrintById(null);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //app.PrintMovie()
+                Movie m = new Movie() { Title = "Battleship Potemkin" };
+                movieRepository.Insert(m);
+
+                App.PrintMovie(); // kai ektipono gt exo ftiaksei auton ton mixanismo
             }
+
+            public static void PrintById(int? id) //fernei tin tainia me to Id tis
+            {
+                Goldennn.Services.MovieRepository movieRepository = new MovieRepository();
+                var movie = movieRepository.GetById(id);
+                
+                    Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
+                
+            }
+        
         }
 
         

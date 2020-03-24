@@ -18,11 +18,30 @@ namespace Goldennn.Services
 
     {
         public IEnumerable<Movie> GetAll()
-            {
-        using (MyDatabase db = new MyDatabase())
         {
+            using (MyDatabase db = new MyDatabase())
+            {
                 return db.Movies.ToList();
+            }
         }
+        public Movie GetById(int? id)
+        {
+            using (MyDatabase db = new MyDatabase())
+            {
+                return db.Movies.Find(id);
+            }
+        }
+       
+        public void Insert(Movie movie) //fere mou mi atainia pao ton ourano na tin pro8seo sti lista pragmaton
+            //exo 2 tropous
+        {
+            //1
+            using (MyDatabase db = new MyDatabase())
+            {
+                db.Movies.Add(movie);
+                db.SaveChanges();
+            }
+        }
+       
     }
-}
 }
