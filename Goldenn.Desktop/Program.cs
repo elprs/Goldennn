@@ -11,6 +11,9 @@ namespace Goldenn.Desktop
         static void Main(string[] args)
         {
 
+
+
+            Console.ReadKey();
         }
     }
 }
