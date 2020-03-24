@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Goldennn.Database;
 using Goldennn.Entities;
+using System.Data.Entity;
 
 namespace Goldennn.Services
 {
@@ -35,13 +36,40 @@ namespace Goldennn.Services
         public void Insert(Movie movie) //fere mou mi atainia pao ton ourano na tin pro8seo sti lista pragmaton
             //exo 2 tropous
         {
-            //1
-            using (MyDatabase db = new MyDatabase())
+            ////1
+            //using (MyDatabase db = new MyDatabase())
+            //{
+            //    db.Movies.Add(movie);
+            //    db.SaveChanges();
+            //}
+
+            //2os kai kaluteros tropos
+            using (MyDatabase db = new MyDatabase())//to antikeimeno einai etoimo gia na ginei commit, gia na paei sti basi
             {
-                db.Movies.Add(movie);
+                db.Entry(movie).State = EntityState.Added; //ela bale to o movie pou ir8e apo to diastima se katastasi. poioa katasasti? entity state (einai ena enum tis .panw) poia katastasi? .added
                 db.SaveChanges();
             }
+
         }
-       
+
+        public void Update(Movie movie)
+        {
+            using (MyDatabase db = new MyDatabase())
+            {
+                db.Entry(movie).State = EntityState.Modified;
+                db.SaveChanges();
+
+            }
+        }
+        public void Delete(Movie movie)
+        {
+            using (MyDatabase db = new MyDatabase())
+            {
+                db.Entry(movie).State = EntityState.Deleted;
+                db.SaveChanges();
+
+            }
+        }
+
     }
 }
