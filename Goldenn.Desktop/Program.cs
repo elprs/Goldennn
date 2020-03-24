@@ -110,6 +110,11 @@ namespace Goldenn.Desktop
                 App.PrintMovies();
 
                 Console.WriteLine("=========================================");
+
+
+
+
+
             }
 
             Console.ReadKey();
@@ -117,37 +122,46 @@ namespace Goldenn.Desktop
 
         public class App
         {
+            //public static void PrintMovies()
+            //{
+            //    MovieRepository movieRepository = new MovieRepository();
+
+
+            //    var movies = movieRepository.GetAll();
+            //    foreach (var movie in movies)
+            //    {
+            //        Console.WriteLine("{0,-5}{1,-11}", movie.MovieId, movie.Title);
+            //    }
+            //}
+
+
+
+            //public static void PrintMovies()
+            //{
+            //    MovieRepository movieRepository = new MovieRepository();
+            //    var movies = movieRepository.GetAll().OrderByDescending(x=>x.Title); // sord --- order by  MATHE LINQ
+            //    foreach (var movie in movies)
+            //    {
+            //        Console.WriteLine("{0,-5}{1,-11}", movie.MovieId, movie.Title);
+            //    }
+            //}
+
+
             public static void PrintMovies()
             {
                 MovieRepository movieRepository = new MovieRepository();
-
-
-                var movies = movieRepository.GetAll();
+                var movies = movieRepository.GetAll().OrderByDescending(x => x.Title); // sord --- order by  MATHE LINQ
                 foreach (var movie in movies)
                 {
                     Console.WriteLine("{0,-5}{1,-11}", movie.MovieId, movie.Title);
                 }
             }
 
-
-
-
-
-
-
-
-
-
-
-
-
             public static void PrintById(int? id) //fernei tin tainia me to Id tis
             {
                 Goldennn.Services.MovieRepository movieRepository = new MovieRepository();
                 var movie = movieRepository.GetById(id);
-
                 Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
-
             }
 
         }

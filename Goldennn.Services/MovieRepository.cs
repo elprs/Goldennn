@@ -18,13 +18,22 @@ namespace Goldennn.Services
     public class MovieRepository //giati o apo8ikarios fernei apo to repositoty tainiew. service apo8ikis
 
     {
-        public IEnumerable<Movie> GetAll()
+        //public IEnumerable<Movie> GetAll()
+        //{
+        //    using (MyDatabase db = new MyDatabase())
+        //    {
+        //        return db.Movies.ToList();
+        //    }
+        //}       
+
+        public IQueryable<Movie> GetAll()
         {
             using (MyDatabase db = new MyDatabase())
             {
-                return db.Movies.ToList();
+                return db.Movies;
             }
         }
+
         public Movie GetById(int? id)
         {
             using (MyDatabase db = new MyDatabase())
