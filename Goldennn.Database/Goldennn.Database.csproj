@@ -60,17 +60,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Goldenn.Desktop\Goldenn.Desktop.csproj">
-      <Project>{7a8498f2-1fed-44c9-bd21-c191296fb98a}</Project>
-      <Name>Goldenn.Desktop</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Goldennn.Entities\Goldennn.Entities.csproj">
       <Project>{cdd8e0b5-fbf8-4910-9132-57db8454cde5}</Project>
       <Name>Goldennn.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Goldennn.Services\Goldennn.Services.csproj">
-      <Project>{16a5d66d-a4cc-46e3-8339-2e59b24f91ec}</Project>
-      <Name>Goldennn.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
