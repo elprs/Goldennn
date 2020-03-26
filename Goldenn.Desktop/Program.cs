@@ -16,17 +16,17 @@ namespace Goldenn.Desktop
         {
             using (MyDatabase db = new MyDatabase())
             {
-                ////var movies = db.Movies; //san I quirable interfase // tha steilei SQL QUERY STI BASI //zitao ka8e fora apo toservar na mou stelnei thn katallili pliroforia // de me endiaferei gia ena sugkekrimeno query sti basi kai exo para polu RAM 
+                var movies = db.Movies; //san I quirable interfase // tha steilei SQL QUERY STI BASI //zitao ka8e fora apo toservar na mou stelnei thn katallili pliroforia // de me endiaferei gia ena sugkekrimeno query sti basi kai exo para polu RAM 
+                foreach (var movie in movies)
+                {
+                    Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
+                }
 
 
                 //var movies = db.Movies.ToList(); //simbato me IEnumerable //tha stalei query sti basi poy 8a sou ferei ol aosa xxreiazomai sato run time
                 ////tha to xrismopoiiso gia polla//tha ferei osa xreiazomai sto run time
                 ////fere mou AUTOO apo ti basi, stoxeuMENA!!!!! me linq 
 
-                //foreach (var movie in movies)
-                //{
-                //    Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
-                //}
 
 
 
