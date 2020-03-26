@@ -8,6 +8,6 @@ namespace Goldennn.Entities
     {
         public int ActorId { get; set; }
         public string FirstName { get; set; }
-        public ICollection<Movie> Movies { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

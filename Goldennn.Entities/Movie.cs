@@ -15,8 +15,10 @@ namespace Goldennn.Entities
         public int MovieId { get; set; }
         public string Title { get; set; }
 
-        public ICollection<Actor> Actors { get; set; }
-        public Director Director { get; set; }
-        public Genre Genre { get; set; }
+        public virtual ICollection<Actor> Actors { get; set; }
+
+        public int DirectorId { get; set; }
+        public virtual Director Director { get; set; }
+        public virtual Genre Genre { get; set; }
     }
 }

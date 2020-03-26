@@ -9,6 +9,6 @@ namespace Goldennn.Entities
     {
         public int GenreId { get; set; }
         public string Kind { get; set; }
-        public ICollection<Movie> Movies { get; set; }
+        public virtual ICollection<Movie> Movies { get; set; }
     }
 }

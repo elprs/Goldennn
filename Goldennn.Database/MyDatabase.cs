@@ -13,7 +13,7 @@ namespace Goldennn.Database
 
         public MyDatabase() : base("Sindesmos")
         {
-                
+
         }
 
         public DbSet<Movie> Movies { get; set; }
