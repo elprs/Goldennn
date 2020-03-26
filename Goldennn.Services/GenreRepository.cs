@@ -14,70 +14,70 @@ namespace Goldennn.Services
     ////dokimasa na paro ola ta prahmata se lidta. ta pira ola. Get all loipon. 
     ////GetAll // de 8a sundeetai me to datadata base alla 8a ta pairnei apo to service
     ////periame//leitoyrgo//anagnotisa//toxw
-    ////erxomai sto sevices kai tha ftiakso mia klass pou tja tin po   MovieRepository
-    //public class MovieRepository //giati o apo8ikarios fernei apo to repositoty tainiew. service k
+    ////erxomai sto sevices kai tha ftiakso mia klass pou tja tin po   GenreRepository
+    //public class GenreRepository //giati o apo8ikarios fernei apo to repositoty tainiew. service k
 
     //{
-    //    public IEnumerable<Movie> GetAll()
+    //    public IEnumerable<Genre> GetAll()
     //    {
     //        using (MyDatabase db = new MyDatabase())
     //        {
-    //            return db.Movies.ToList(); // sto run time se mi alista n aeinai sumbato me to ienumerable
+    //            return db.Genres.ToList(); // sto run time se mi alista n aeinai sumbato me to ienumerable
 
     //        }
     //    }
 
-    //    public Movie GetById(int? id)
+    //    public Genre GetById(int? id)
     //    {
     //        using (MyDatabase db = new MyDatabase())
     //        {
-    //            return db.Movies.Find(id);
+    //            return db.Genres.Find(id);
     //        }
     //    }
 
-    //    //public IQueryable<Movie> GetAll()
+    //    //public IQueryable<Genre> GetAll()
     //    //{
     //    //    using (MyDatabase db = new MyDatabase())
     //    //    {
-    //    //        return db.Movies;
+    //    //        return db.Genres;
     //    //    }
     //    //}
 
 
 
-    //    public void Insert(Movie movie) //fere mou mi atainia pao ton ourano na tin pro8seo sti lista pragmaton
+    //    public void Insert(Genre Genre) //fere mou mi atainia pao ton ourano na tin pro8seo sti lista pragmaton
     //                                    //exo 2 tropous
     //    {
     //        ////1
     //        //using (MyDatabase db = new MyDatabase())
     //        //{
-    //        //    db.Movies.Add(movie);
+    //        //    db.Genres.Add(Genre);
     //        //    db.SaveChanges();
     //        //}
 
     //        //2os kai kaluteros tropos
     //        using (MyDatabase db = new MyDatabase())//to antikeimeno einai etoimo gia na ginei commit, gia na paei sti basi
     //        {
-    //            db.Entry(movie).State = EntityState.Added; //ela bale to o movie pou ir8e apo to diastima se katastasi. poioa katasasti? entity state (einai ena enum tis .panw) poia katastasi? .added
+    //            db.Entry(Genre).State = EntityState.Added; //ela bale to o Genre pou ir8e apo to diastima se katastasi. poioa katasasti? entity state (einai ena enum tis .panw) poia katastasi? .added
     //            db.SaveChanges();
     //        }
 
     //    }
 
-    //    public void Update(Movie movie)
+    //    public void Update(Genre Genre)
     //    {
     //        using (MyDatabase db = new MyDatabase())
     //        {
-    //            db.Entry(movie).State = EntityState.Modified;
+    //            db.Entry(Genre).State = EntityState.Modified;
     //            db.SaveChanges();
 
     //        }
     //    }
-    //    public void Delete(Movie movie)
+    //    public void Delete(Genre Genre)
     //    {
     //        using (MyDatabase db = new MyDatabase())
     //        {
-    //            db.Entry(movie).State = EntityState.Deleted;
+    //            db.Entry(Genre).State = EntityState.Deleted;
     //            db.SaveChanges();
 
     //        }
@@ -87,38 +87,38 @@ namespace Goldennn.Services
     //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-    public class MovieRepository
+    public class GenreRepository
     {
         MyDatabase db = new MyDatabase();
         //GetAll
-        public IEnumerable<Movie> GetAll()
+        public IEnumerable<Genre> GetAll()
         {
-            return db.Movies.ToList();
+            return db.Genres.ToList();
         }
         //GetById
-        public Movie GetById(int? id)
+        public Genre GetById(int? id)
         {
-            return db.Movies.Find(id);
+            return db.Genres.Find(id);
         }
 
         //Insert
-        public void Insert(Movie movie)
+        public void Insert(Genre genre)
         {
-            db.Entry(movie).State = EntityState.Added;
+            db.Entry(genre).State = EntityState.Added;
             db.SaveChanges();
         }
 
         //Update
-        public void Update(Movie movie)
+        public void Update(Genre genre)
         {
-            db.Entry(movie).State = EntityState.Modified;
+            db.Entry(genre).State = EntityState.Modified;
             db.SaveChanges();
         }
 
         //Delete
-        public void Delete(Movie movie)
+        public void Delete(Genre genre)
         {
-            db.Entry(movie).State = EntityState.Deleted;
+            db.Entry(genre).State = EntityState.Deleted;
             db.SaveChanges();
         }
 

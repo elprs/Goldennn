@@ -16,11 +16,62 @@ namespace Goldenn.Desktop
         {
             using (MyDatabase db = new MyDatabase())
             {
-                var movies = db.Movies; //san I quirable interfase // tha steilei SQL QUERY STI BASI //zitao ka8e fora apo toservar na mou stelnei thn katallili pliroforia // de me endiaferei gia ena sugkekrimeno query sti basi kai exo para polu RAM 
-                foreach (var movie in movies)
+
+                MovieRepository movieRepo = new MovieRepository();
+                var lista = movieRepo.GetAll().Where(x => x.Title.Contains("e"));
+                
+
+
+                foreach (var movie in lista)
                 {
-                    Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
+                    Console.WriteLine(movie.Title);
+                    foreach (var actor in movie.Actors)   // de douleuei
+                    {
+                    Console.WriteLine(actor.FirstName);
+
+                    }
                 }
+
+                Console.WriteLine("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
+
+
+                var lista2 = movieRepo.GetAll().Where(x => x.Title.Contains("a"));
+
+
+
+                foreach (var movie in lista2)
+                {
+                    Console.WriteLine(movie.Title);
+                    foreach (var actor in movie.Actors)
+                    {
+                        Console.WriteLine(actor.FirstName);
+
+                    }
+                }
+
+               movieRepo.Dispose();
+                //AUTO gia ton allo tropo Sta Services!!!!!!!!!!1 chack it out
+                //giati mporo na anoigokeliso to service opote opote opote goustarw
+                //ALLA an eisai LAzy Loading sthn GetAll PREPEI na kanw include(x=>x. ... ) tou les fere kai auto
+
+
+                ActorRepository actorRepository = new ActorRepository();
+
+                foreach (var item in actorRepository.GetAll())   // de douleuei
+                {
+                    Console.WriteLine(item.FirstName);
+
+                }
+
+                actorRepository.Dispose();
+
+
+
+                //var movies = db.Movies; //san I quirable interfase // tha steilei SQL QUERY STI BASI //zitao ka8e fora apo toservar na mou stelnei thn katallili pliroforia // de me endiaferei gia ena sugkekrimeno query sti basi kai exo para polu RAM 
+                //foreach (var movie in movies)
+                //{
+                //    Console.WriteLine("{0,-6}{0,-15}", movie.MovieId, movie.Title);
+                //}
 
 
                 //var movies = db.Movies.ToList(); //simbato me IEnumerable //tha stalei query sti basi poy 8a sou ferei ol aosa xxreiazomai sato run time
